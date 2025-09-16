@@ -21,15 +21,21 @@ PIB: O Produto Interno Bruto da cidade. Tipo: float
  
 Número de Pontos Turísticos: A quantidade de pontos turísticos na cidade. Tipo: int
 */
+
+/*
+Calcular a Densidade Populacional: Divida a população da cidade pela sua área. O resultado será a densidade populacional, que representa o número de habitantes por quilômetro quadrado. Armazene esse valor em uma variável do tipo float.
+ 
+Calcular o PIB per Capita: Divida o PIB da cidade pela sua população. O resultado será o PIB per capita, que indica a riqueza média por pessoa na cidade. Armazene esse valor em uma variável do tipo float.
+*/
 int main() {
     printf("Desafio Cartas Super Trunfo");
     char estado1[2], codigo_carta1[4], nome_cidade1[50];
     int populacao1, pontos_turisticos1;
-    float Area_km1, pib1;
+    float Area_km1, pib1, calc_desidade_populacional1, calc_pib_percapta1;
 
     char estado2[2], codigo_carta2[4], nome_cidade2[50];
     int populacao2, pontos_turisticos2;
-    float Area_km2, pib2;
+    float Area_km2, pib2, calc_desidade_populacional2, calc_pib_percapta2;
 
 
     //inicia a pegar os dados da carta 1
@@ -81,6 +87,9 @@ int main() {
     printf("Insira o numero de pontos turisticos: ");
     scanf("%d", &pontos_turisticos2);
 
+    // calculos carta 1
+    calc_desidade_populacional1 =  populacao1 / Area_km1;
+    calc_pib_percapta1 = pib1 / populacao1;
 
     //Mostra os dados da carta 1
     printf("\nDados da Carta 1");
@@ -91,6 +100,13 @@ int main() {
     printf("\nArea: %f", Area_km1);
     printf("\nPIB: %f", pib1);
     printf("\nNumero de pontos turisticos: %d", pontos_turisticos1);
+    printf("\nDensidade Populacional: %.2f", calc_desidade_populacional1);
+    printf("\nPIB per Capita: %.2f", calc_pib_percapta1);
+
+
+    // calculos carta 2
+    calc_desidade_populacional2 =  populacao2 / Area_km2;
+    calc_pib_percapta2 = pib2 / populacao2;
 
     //Mostra os dados da carta 2
     printf("\n\nDados da Carta 2");
@@ -101,7 +117,8 @@ int main() {
     printf("\nArea: %f", Area_km2);
     printf("\nPIB: %f", pib2);
     printf("\nNumero de pontos turisticos: %d", pontos_turisticos2);
-
+    printf("\nDensidade Populaciona: %.2f", calc_desidade_populacional2);
+    printf("\nPIB per Capita: %.2f", calc_pib_percapta2);
 
     return 0;
 }

@@ -29,14 +29,15 @@ Calcular o PIB per Capita: Divida o PIB da cidade pela sua população. O result
 */
 int main() {
     printf("Desafio Cartas Super Trunfo");
-    char estado1[2], codigo_carta1[4], nome_cidade1[50];
+    char estado1[2], codigo_carta1[2], nome_cidade1[50];
     int populacao1, pontos_turisticos1;
-    float Area_km1, pib1, calc_desidade_populacional1, calc_pib_percapta1;
+    float Area_km1, pib1, calc_desidade_populacional1, calc_pib_percapta1, superpoder1;
 
-    char estado2[2], codigo_carta2[4], nome_cidade2[50];
+    char estado2[2], codigo_carta2[2], nome_cidade2[50];
     int populacao2, pontos_turisticos2;
-    float Area_km2, pib2, calc_desidade_populacional2, calc_pib_percapta2;
-
+    float Area_km2, pib2, calc_desidade_populacional2, calc_pib_percapta2, superpoder2;
+     
+  
 
     //inicia a pegar os dados da carta 1
     printf("\nInsira os dados da carta 1\n");
@@ -90,6 +91,7 @@ int main() {
     // calculos carta 1
     calc_desidade_populacional1 =  populacao1 / Area_km1;
     calc_pib_percapta1 = pib1 / populacao1;
+    superpoder1 = populacao1 + Area_km1 + pib1 + calc_pib_percapta1 + (calc_desidade_populacional1/1);
 
     //Mostra os dados da carta 1
     printf("\nDados da Carta 1");
@@ -102,11 +104,13 @@ int main() {
     printf("\nNumero de pontos turisticos: %d", pontos_turisticos1);
     printf("\nDensidade Populacional: %.2f", calc_desidade_populacional1);
     printf("\nPIB per Capita: %.2f", calc_pib_percapta1);
+    printf("\nSuper Poder: %.2f", superpoder1);
 
 
     // calculos carta 2
     calc_desidade_populacional2 =  populacao2 / Area_km2;
     calc_pib_percapta2 = pib2 / populacao2;
+    superpoder2 = populacao2 + Area_km2 + pib2 + calc_pib_percapta2 + (calc_desidade_populacional2/1);
 
     //Mostra os dados da carta 2
     printf("\n\nDados da Carta 2");
@@ -119,6 +123,33 @@ int main() {
     printf("\nNumero de pontos turisticos: %d", pontos_turisticos2);
     printf("\nDensidade Populaciona: %.2f", calc_desidade_populacional2);
     printf("\nPIB per Capita: %.2f", calc_pib_percapta2);
+    printf("\nSuper Poder: %.2f", superpoder1);
+
+    //COMPARACOES
+    int compara_populacao, compara_pontos_turisticos;
+    float compara_pib, compara_area, compara_densidade_populacional, compara_pib_percapita, compara_superpoder;
+   
+    compara_populacao=populacao1>populacao2;
+    compara_area=Area_km1>Area_km2;
+    compara_pib=pib1>pib2;
+    compara_pontos_turisticos=pontos_turisticos1>pontos_turisticos2;
+    compara_densidade_populacional=calc_desidade_populacional1>calc_desidade_populacional2;
+    compara_pib_percapita=calc_pib_percapta1>calc_pib_percapta2;
+    compara_superpoder=superpoder1>superpoder2;
+
+    //mostrar comparacoes
+    printf("\n\nComparações das Cartas");
+    printf("\nLegenda 1 para verdadeiro – Carta 1 vence – e 0 para falso – Carta 2 vence");
+    printf("\nPopulcao: %d", compara_populacao);
+    printf("\nArea: %f", compara_area);
+    printf("\nPIB: %f", compara_pib);
+    printf("\nNumero de pontos turisticos: %d", compara_pontos_turisticos);
+    printf("\nDensidade Populaciona: %.2f", compara_densidade_populacional);
+    printf("\nPIB per Capita: %.2f", compara_pib_percapita);
+    printf("\nSuper Poder: %.2f", compara_superpoder);
+
 
     return 0;
 }
+
+
